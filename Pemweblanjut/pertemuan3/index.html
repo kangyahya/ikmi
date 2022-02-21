@@ -5,7 +5,7 @@
   <body>
     <script type="text/javascript" charset="utf-8">
       const title = document.createElement('h1')
-      title.innerText= 'Biodata'
+      title.innerText= 'Kalkulator'
       document.body.appendChild(title)
       const createTable = (label,value) => {
         const tr = document.createElement('tr')
@@ -15,7 +15,7 @@
         tddoubledot.appendChild(document.createTextNode(':'))
         
         const tdvalue = document.createElement('td')
-        tdvalue.appendChild(document.createTextNode(value))
+        tdvalue.appendChild(value)
         
         tr.appendChild(tdlabel)
         tr.appendChild(tddoubledot)
@@ -25,12 +25,33 @@
       }
       const table = document.createElement('table')
       table.width = '100%'
-      table.border = '1px'
-      const nama = createTable('Nama', 'Moh. Yahya')
-      const nim = createTable('NIM','41204716')
-      table.appendChild(nama)
-      table.appendChild(nim)
+      const text_input_satu = document.createElement('input')
+      text_input_satu.id = 'bil_1'
+      text_input_satu.type = 'number'
+      const label_bilangan_1 = createTable('Bilangan Ke 1', text_input_satu)
+      const text_input_dua = document.createElement('input')
+      text_input_dua.id = 'bil_2'
+      text_input_dua.type = 'number'
+      const label_bilangan_2 = createTable('Bilangan Ke 2',text_input_dua)
+      table.appendChild(label_bilangan_1)
+      table.appendChild(label_bilangan_2)
+      const add = document.createElement('button')
+      add.type = 'submit'
+      add.innerText= '+'
+      add.id= 'tambah'
+      const btnTambah = document.querySelector('#tambah')
+      btnTambah.addEventListner('click', tambah)
+      
+      
       document.body.appendChild(table)
+      document.body.appendChild(add)
+      const tambah = () =>{
+        const bil_1_value = document.querySelector('#bil_1')
+        const bil_2_value = document.querySelector('#bil_2')
+        let result=0
+        result = parseFloat(bil_1_value.value) + parseFloat(bil_2_value.value)
+        alert(result)
+      }
     </script>
   </body>
 </html>

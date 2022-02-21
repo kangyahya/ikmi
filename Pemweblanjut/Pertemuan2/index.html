@@ -1,1 +1,47 @@
-
+<html>
+  <head>
+    <title>Pemrograman Web Lanjut</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      const title = document.createElement('h1')
+      title.innerText= 'Biodata'
+      document.body.appendChild(title)
+      const createTable = (label,value) => {
+        const tr = document.createElement('tr')
+        const tdlabel = document.createElement('td')
+        tdlabel.appendChild(document.createTextNode(label))
+        const tddoubledot = document.createElement('td')
+        tddoubledot.appendChild(document.createTextNode(':'))
+        
+        const tdvalue = document.createElement('td')
+        tdvalue.appendChild(document.createTextNode(value))
+        
+        tr.appendChild(tdlabel)
+        tr.appendChild(tddoubledot)
+        tr.appendChild(tdvalue)
+        
+        return tr
+      }
+      const table = document.createElement('table')
+      table.width = '100%'
+      table.border = '1px'
+      const nama = createTable('Nama', 'Moh. Yahya')
+      const nim = createTable('NIM','41204716')
+      const jurusan = createTable('Jurusan','Teknik Informatika')
+      const kelas = createTable('Kelas','TI - 2020 - S')
+      const jk = createTable('Jenis Kelamin','Laki- Laki')
+      const riwayat = createTable('Riwayat Pendidikan','MI Al-Ikhlas, MTs Al-Ikhlas, SMK Yanuda Tawa, STMIK IKMI Cirebon')
+      const alamat = createTable('Alamat','Desa Setupatok')
+      
+      table.appendChild(nama)
+      table.appendChild(nim)
+      table.appendChild(jurusan)
+      table.appendChild(kelas)
+      table.appendChild(jk)
+      table.appendChild(riwayat)
+      table.appendChild(alamat)
+      document.body.appendChild(table)
+    </script>
+  </body>
+</html>

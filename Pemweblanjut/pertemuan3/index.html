@@ -7,8 +7,30 @@
       const title = document.createElement('h1')
       title.innerText= 'Biodata'
       document.body.appendChild(title)
-      document.write('Nama            : Moh.Yahya')
-      document.writeln('NIM           : 41204716')
+      const createTable = (label,value) => {
+        const tr = document.createElement('tr')
+        const tdlabel = document.createElement('td')
+        tdlabel.appendChild(document.createTextNode(label))
+        const tddoubledot = document.createElement('td')
+        tddoubledot.appendChild(document.createTextNode(':'))
+        
+        const tdvalue = document.createElement('td')
+        tdvalue.appendChild(document.createTextNode(value))
+        
+        tr.appendChild(tdlabel)
+        tr.appendChild(tddoubledot)
+        tr.appendChild(tdvalue)
+        
+        return tr
+      }
+      const table = document.createElement('table')
+      table.width = '100%'
+      table.border = '1px'
+      const nama = createTable('Nama', 'Moh. Yahya')
+      const nim = createTable('NIM','41204716')
+      table.appendChild(nama)
+      table.appendChild(nim)
+      document.body.appendChild(table)
     </script>
   </body>
 </html>
